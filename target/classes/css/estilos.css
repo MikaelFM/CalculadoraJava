@@ -1,0 +1,6 @@
+.backspace {
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 43%;
+    -fx-background-position: center;
+    -fx-background-image: url('backspace-contorno.png')
+}
