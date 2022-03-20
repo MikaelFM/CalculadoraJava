@@ -26,7 +26,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="mais" mnemonicParsing="false" onAction="#onOperation" prefHeight="59.0" prefWidth="93.0" styleClass="color2" text=" + " textFill="WHITE" GridPane.columnIndex="3">
+            <Button fx:id="mais" mnemonicParsing="false" onAction="#pegaOperacao" prefHeight="59.0" prefWidth="93.0" styleClass="color2" text=" + " textFill="WHITE" GridPane.columnIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
@@ -41,7 +41,7 @@
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n0" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="n0" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
@@ -51,62 +51,62 @@
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="vezes" mnemonicParsing="false" onAction="#onOperation" prefHeight="33.0" prefWidth="111.0" styleClass="color2" text=" * " textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button fx:id="vezes" mnemonicParsing="false" onAction="#pegaOperacao" prefHeight="33.0" prefWidth="111.0" styleClass="color2" text=" * " textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n9" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="9" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button fx:id="n9" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="9" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n8" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="8" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="n8" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="8" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n7" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="7" textFill="WHITE" GridPane.rowIndex="3">
+            <Button fx:id="n7" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="7" textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="dividido" mnemonicParsing="false" onAction="#onOperation" prefHeight="33.0" prefWidth="111.0" styleClass="color2" text=" / " textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="dividido" mnemonicParsing="false" onAction="#pegaOperacao" prefHeight="33.0" prefWidth="111.0" styleClass="color2" text=" / " textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n6" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="n6" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n5" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="n5" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n4" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="4" textFill="WHITE" GridPane.rowIndex="2">
+            <Button fx:id="n4" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="4" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="menos" mnemonicParsing="false" onAction="#onOperation" prefHeight="33.0" prefWidth="111.0" styleClass="color2" text=" - " textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="menos" mnemonicParsing="false" onAction="#pegaOperacao" prefHeight="33.0" prefWidth="111.0" styleClass="color2" text=" - " textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n3" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="n3" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n2" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="n2" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="n1" mnemonicParsing="false" onAction="#onNumber" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="1" textFill="WHITE" GridPane.rowIndex="1">
+            <Button fx:id="n1" mnemonicParsing="false" onAction="#pegaNumero" prefHeight="33.0" prefWidth="111.0" styleClass="color1" text="1" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="21.0" />
                </font>

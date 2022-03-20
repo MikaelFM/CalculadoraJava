@@ -2,12 +2,15 @@ package com.calculadora.calculadora;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CalculadoraController {
 
@@ -15,14 +18,13 @@ public class CalculadoraController {
     protected Label tela;
     @FXML
     protected Label subTela;
-
+    protected int cont = 0;
     protected ArrayList<String> number = new ArrayList<>();
     protected ArrayList<String> numbers = new ArrayList<>();
 
+
     @FXML
-    protected void onNumber(ActionEvent event){
-        Button b = (Button) event.getSource();
-        String s = b.getText();
+    protected void onNumber(String s){
         number.add(s);
         tela.setText(arrayToString());
     }
@@ -44,9 +46,7 @@ public class CalculadoraController {
         tela.setText(arrayToString());
     }
     @FXML
-    protected void onOperation(ActionEvent event){
-        Button b = (Button) event.getSource();
-        String s = b.getText();
+    protected void onOperation(String s){
         numbers.add(tela.getText());
         if(numbers.size() != 3){
             try {
@@ -59,14 +59,12 @@ public class CalculadoraController {
         } else if (numbers.size() == 3){
             numbers.set(0, formataFloat(String.valueOf(fazOperacao())));
             arrayToSubTela();
-            onOperation(event);
+            onOperation(s);
         }
 
     }
     @FXML
-    protected void trocaSinal(ActionEvent event){
-        Button b = (Button) event.getSource();
-        String s = b.getText();
+    protected void trocaSinal(){
         try {
             if (!number.get(0).equals("-")) {
                 number.add(0, "-");
@@ -89,11 +87,9 @@ public class CalculadoraController {
         numbers.clear();
     }
     @FXML
-    protected void virgula(ActionEvent event){
-        Button b = (Button) event.getSource();
-        String s = b.getText();
+    protected void virgula(){
         if(!number.contains(",")){
-            number.add(s);
+            number.add(",");
         }
         tela.setText(arrayToString());
     }
@@ -151,8 +147,37 @@ public class CalculadoraController {
         }
         return resultado;
     }
-
     public void closeApp(ActionEvent event) {
         CalculadoraApplication.stage1.close();
     }
+    public void key(KeyEvent k){
+            String s = k.getText();
+            String code = String.valueOf(k.getCode());
+            System.out.println(code);
+            ArrayList<String> algarismos = new ArrayList<>(List.of("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"));
+            ArrayList<String> operacoes = new ArrayList<>(List.of("+", "-", "/", "*"));
+            if (algarismos.contains(s)) {
+                onNumber(s);
+            } else if (code.equals("BACK_SPACE")) {
+                backspace();
+            } else if (s.equals("=") || code.equals("ENTER")) {
+                result();
+            } else if (s.equals(",") || s.equals(".")) {
+                virgula();
+            } else if (operacoes.contains(s)) {
+                onOperation(" " + s + " ");
+            }
+            cont++;
+    }
+    @FXML
+    protected void pegaOperacao(ActionEvent event){
+        Button b = (Button) event.getSource();
+        onOperation(b.getText());
+    };
+    @FXML
+    protected void pegaNumero(ActionEvent event){
+        Button b = (Button) event.getSource();
+        onNumber(b.getText());
+    };
+
 }
