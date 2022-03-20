@@ -4,3 +4,25 @@
     -fx-background-position: center;
     -fx-background-image: url('backspace-contorno.png')
 }
+.color1, .backspace {
+    -fx-background-color: '#29283e';
+}
+.color1:hover, .backspace:hover {
+    -fx-background-color: '#212136';
+}
+.color2 {
+    -fx-background-color:  '#232238';
+}
+.color2:hover {
+    -fx-background-color:  '#1c1b2c'
+}
+.color3 {
+     -fx-background-color: '#4741d1';
+ }
+.color3:hover {
+      -fx-background-color: '#3834a7';
+ }
+  .button {
+      -fx-border-radius: 0;
+      -fx-border-color: '#181424';
+  }
