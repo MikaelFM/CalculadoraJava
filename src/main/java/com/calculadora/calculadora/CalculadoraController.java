@@ -2,12 +2,9 @@ package com.calculadora.calculadora;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +15,6 @@ public class CalculadoraController {
     protected Label tela;
     @FXML
     protected Label subTela;
-    protected int cont = 0;
     protected ArrayList<String> number = new ArrayList<>();
     protected ArrayList<String> numbers = new ArrayList<>();
 
@@ -56,7 +52,7 @@ public class CalculadoraController {
             }
             clear();
             arrayToSubTela();
-        } else if (numbers.size() == 3){
+        } else {
             numbers.set(0, formataFloat(String.valueOf(fazOperacao())));
             arrayToSubTela();
             onOperation(s);
@@ -147,7 +143,7 @@ public class CalculadoraController {
         }
         return resultado;
     }
-    public void closeApp(ActionEvent event) {
+    public void closeApp() {
         CalculadoraApplication.stage1.close();
     }
     public void key(KeyEvent k){
@@ -166,18 +162,19 @@ public class CalculadoraController {
                 virgula();
             } else if (operacoes.contains(s)) {
                 onOperation(" " + s + " ");
+            }   else if (code.equals("ESCAPE")) {
+                closeApp();
             }
-            cont++;
     }
     @FXML
     protected void pegaOperacao(ActionEvent event){
         Button b = (Button) event.getSource();
         onOperation(b.getText());
-    };
+    }
     @FXML
     protected void pegaNumero(ActionEvent event){
         Button b = (Button) event.getSource();
         onNumber(b.getText());
-    };
+    }
 
 }

@@ -1,12 +1,9 @@
 package com.calculadora.calculadora;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,7 +25,7 @@ public class CalculadoraApplication extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
-        scene.setOnKeyPressed(e -> controller.key(e));
+        scene.setOnKeyPressed(controller::key);
     }
     public static void main(String[] args) {
         launch();
